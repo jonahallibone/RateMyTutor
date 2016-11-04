@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'VoteController@index');
+Route::post('/api/vote/{id}', 'VoteController@store');
