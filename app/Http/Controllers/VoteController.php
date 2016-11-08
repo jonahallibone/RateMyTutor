@@ -23,6 +23,10 @@ class VoteController extends Controller {
       return view("documents")->with(['documents' => Document::all()]);
     }
 
+    public function links() {
+      return view("links");
+    }
+
     public function voteTutors(Request $request) {
       $type = $request->input('type');
       $tutor = $request->input('tutor_id');
