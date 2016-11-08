@@ -4,12 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tutor extends Model
+class Document extends Model
 {
-    protected $table = 'tutors';
+    protected $table = 'documents';
 
     protected $fillable = [
-      'name'
+      'document_name',
+      'document_link',
+      'document_help'
     ];
 
     public function votes() {
@@ -19,14 +21,14 @@ class Tutor extends Model
     public function upVotes($id) {
       return $this->votes()->where("status",1)
                            ->where("foreign_id",$id)
-                           ->where('type',"=","0")
+                           ->where('type',"=","1")
                            ->count();
     }
 
     public function downVotes($id) {
       return $this->votes()->where("status",-1)
                            ->where("foreign_id",$id)
-                           ->where('type',"=","0")
+                           ->where('type',"=","1")
                            ->count();
     }
 }

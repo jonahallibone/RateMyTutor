@@ -11,5 +11,14 @@
 |
 */
 
+/*** GET Routes ***/
+
 Route::get('/', 'VoteController@index');
-Route::post('/api/vote/{id}', 'VoteController@store');
+Route::get('/econ-410/tutors', 'VoteController@tutors');
+Route::get('/econ-410/documents', 'VoteController@documents');
+Route::get('/econ-410/links', 'VoteController@links');
+
+
+/*** POST Routes ***/
+
+Route::post('/api/vote', 'VoteController@voteTutors');

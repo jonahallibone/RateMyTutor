@@ -9,10 +9,10 @@ class Vote extends Model
     protected $table = 'votes';
 
     protected $fillable = [
-      'tutor_id', 'status'
+      'foreign_id', 'status', 'type'
     ];
 
     public function tutor() {
-      return $this->belongsTo('tutors');
+      return $this->belongsTo('App\Tutor', 'foreign_id');
     }
 }

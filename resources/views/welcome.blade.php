@@ -112,12 +112,13 @@
 
             var data = {
               'type': 'up',
-              'tutor_id': voteCountUp.dataset.tutor
+              'tutor_id': voteCountUp.dataset.tutor,
+              'resource': 'tutor'
             }
             // Headers and params are optional
             makeRequest({
               method: 'POST',
-              url: '/api/vote/1',
+              url: '/api/vote',
               params: data,
               headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -138,14 +139,15 @@
             console.log(voteCountDown.dataset.tutor);
             var data = {
               'type': 'down',
-              'tutor_id': voteCountDown.dataset.tutor
+              'tutor_id': voteCountDown.dataset.tutor,
+              'resource': 'tutor'
             }
 
             console.log(data);
 
             makeRequest({
               method: 'POST',
-              url: '/api/vote/1',
+              url: '/api/vote',
               params: data,
               headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

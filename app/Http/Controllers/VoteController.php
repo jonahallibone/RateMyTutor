@@ -6,19 +6,37 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Vote;
 use App\Tutor;
+use App\Document;
 
 class VoteController extends Controller {
 
 
     public function index() {
-      return view("welcome")->with(['tutors' => Tutor::all()]);
+      return view("heelhome")->with(['tutors' => Tutor::all()]);
     }
 
-    public function store(Request $request, $id) {
+    public function tutors() {
+      return view("tutors")->with(['tutors' => Tutor::all()]);
+    }
+
+    public function documents() {
+      return view("documents")->with(['documents' => Document::all()]);
+    }
+
+    public function voteTutors(Request $request) {
       $type = $request->input('type');
       $tutor = $request->input('tutor_id');
+      $resource = $request->input('resource');
+
       $vote = new Vote();
-      $vote->tutor_id = $tutor;
+
+      $vote->foreign_id = $tutor;
+
+      if($resource === "tutor") {
+        $vote->type = 0;
+      }
+
+      else $vote->type = 1;
 
       if($type === 'up') {
         $vote->status = 1;
