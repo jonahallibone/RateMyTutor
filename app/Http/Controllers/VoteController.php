@@ -12,7 +12,7 @@ class VoteController extends Controller {
 
 
     public function index() {
-      return view("heelhome")->with(['tutors' => Tutor::all()]);
+      return view("links")->with(['tutors' => Tutor::all()]);
     }
 
     public function tutors() {

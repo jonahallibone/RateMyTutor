@@ -18,7 +18,7 @@
       <span class="outer">
         <span class="vote up">Vote Good  &#9650;</span>
         <span class="vote-count good" data-tutor="{{$tutor->id}}"> {{ $tutor->upVotes($tutor->id) }}</span>
-        <br />
+        |
         <span class="vote down">Vote Bad  &#9660;</span>
         <span class="vote-count bad" data-tutor="{{$tutor->id}}"> {{ $tutor->downVotes($tutor->id) }}</span></span>
     </li>

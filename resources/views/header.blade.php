@@ -79,9 +79,10 @@
       ul#information-list li span.outer {
         display: inline-block;
         text-align: center;
-        padding: .5rem 0;
+        padding: .25rem 0;
         color: #000;
         vertical-align: middle;
+        font-size: 0.88rem;
       }
 
       ul#information-list li.tutor span.outer {
